@@ -3,11 +3,13 @@ class User < ApplicationRecord
   
   has_many :artworks,
     foreign_key: :artist_id,
-    class_name: :Artwork
+    class_name: :Artwork,
+    dependent: :destroy
     
   has_many :artwork_shares,
     foreign_key: :viewer_id,
-    class_name: :ArtworkShare
+    class_name: :ArtworkShare,
+    dependent: :destroy 
     
   # will return the set of artworks that have been shared with that user (not the set of artworks that a user has shared with others)
   has_many :shared_artworks,
