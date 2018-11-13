@@ -1,12 +1,11 @@
 class ArtworksController < ApplicationController
   
   def index
-    render json: ArtworkShare.all 
-    # render plain: "I'm in the index action!"
+    render json: Artwork.all 
   end
   
   def create
-    artwork = Artwork.new(user_params)
+    artwork = Artwork.new(artwork_params)
     # replace the `user_attributes_here` with the actual attribute keys
     if artwork.save
       render json: artwork

@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   # put '/users/:id', to: 'users#update'
   # resources :users
     resources :users, only: [:index, :show, :create, :update, :destroy]
+    
+    resources :artworks, only: [:index, :show, :create, :update, :destroy]
+    
+    resources :artwork_shares, only: [:index, :create, :destroy]
   
 end
